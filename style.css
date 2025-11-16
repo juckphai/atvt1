@@ -2314,8 +2314,7 @@ footer div {
   flex: 1;
   font-size: 10px;
   min-width: 50px;
-  padding: 0px 5px;
-  /* (Fixed syntax 'px 5px' to '0px 5px') */
+  padding: 0px 5px; /* (Fixed syntax) */
 }
 
 .add-btn {
@@ -3516,13 +3515,18 @@ footer div {
   padding: 4px 6px;
 }
 
+/* vvv !!! นี่คือส่วนที่แก้ไขตามคำแนะนำครับ !!! vvv
+  (ปรับ .management-row.compact-layout และ .management-container.full-width)
+*/
 @media (max-width: 768px) {
   .management-row.compact-layout {
-    gap: 12px;
-    flex-direction: column;
+    gap: 8px; /* (ปรับ gap) */
+    flex-direction: row; /* (แก้ไขจาก column เป็น row) */
   }
   .management-container.full-width {
-    width: 100%;
+    /* (ลบ width: 100%; ออก) */
+    flex: 1; /* (เพิ่ม) */
+    min-width: 0; /* (เพิ่ม) */
   }
   .management-container.full-width .select-wrapper {
     flex-direction: row;
